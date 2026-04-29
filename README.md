@@ -35,6 +35,21 @@ A machine learning pipeline for real-time credit card fraud detection using XGBo
 
 V14 is the most influential feature with 62.6% importance score, consistent with correlation analysis showing V14 as the strongest fraud signal in the dataset.
 
+## Literature Basis
+
+Model selection and methodology were informed by a review of academic research and open-source benchmarks before implementation.
+
+The [Fraud Detection Handbook](https://github.com/Fraud-Detection-Handbook/fraud-detection-handbook) (Le Borgne et al., Universite Libre de Bruxelles + Worldline, 2022) — one of the most comprehensive academic studies on credit card fraud detection — concludes:
+
+> "XGBoost appeared as the best performing model in most of the experiments, illustrating its robustness to data imbalance scenarios across all performance metrics. The most likely explanation is that the residuals naturally give more weight to the minority class, thus acting like a cost-sensitive technique."
+
+This directly informed our choice of XGBoost with `scale_pos_weight` over SMOTE-based resampling. The handbook also notes that SMOTE and similar resampling techniques, while improving AUC ROC, are often detrimental to Average Precision — a finding we reproduced in our own experiments (SMOTE F1: 0.80 vs class_weight F1: 0.86).
+
+Additional references:
+- [Impact of Sampling Techniques on XGBoost for Fraud Detection](https://arxiv.org/html/2412.07437v1) - arXiv 2024
+- [Enhancing Credit Card Fraud Detection: Comparative Study](https://link.springer.com/article/10.1007/s10614-025-11071-3) - Computational Economics, Springer 2025
+- [FraudX AI: Interpretable ML for Fraud Detection on Imbalanced Datasets](https://www.mdpi.com/2073-431X/14/4/120) - MDPI 2025
+
 ## Stack
 
 - Python 3.9
