@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection: XGBoost ML Model
 
+![Banner](banner.png)
+
 A machine learning pipeline for real-time credit card fraud detection using XGBoost on the Kaggle Credit Card Fraud dataset (284,807 transactions, 0.17% fraud rate).
 
 ## Results
